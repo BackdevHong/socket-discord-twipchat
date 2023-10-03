@@ -1,13 +1,138 @@
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  -webkit-mask-image: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0) 0%,
+    rgba(0, 0, 0, 1) 2em
+  );
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body,
+html {
+  font-family: "NanumSquare";
+  font-size: 40px;
+  height: 100%;
+  overflow: hidden;
+}
+
+#log {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  position: absolute;
+  bottom: 20px;
+  left: 0;
+  padding: 0 1em;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+#log div {
+  width: calc(100% - 20px);
+  background: #fff;
+  box-shadow: 1px 1px 0 #8eabc5, 2px 2px 0 #8eabc5, 3px 3px 0 #8eabc5,
+    4px 4px 0 #8eabc5, 5px 5px 0 #8eabc5, 6px 6px 0 #8eabc5, 7px 7px 0 #8eabc5,
+    8px 8px 0 #8eabc5, 9px 9px 0 #8eabc5, 10px 10px 0 #8eabc5;
+  margin: 0.5em 0 0;
+  padding: 0.3em 0.4em;
+  line-height: 1.2em;
+  animation: InBox 0.5s ease, OutBox 1s ease 40s forwards;
+  -webkit-animation: InBox 0.5s ease, OutBox 1s ease 40s forwards;
+}
+
+.badge {
+  padding: 0.05em;
+}
+
+.meta {
+  font-weight: 600;
+  margin-right: 0.3em;
+}
+
+.deleted {
+  visibility: hidden;
+}
+
+.message {
+  color: $text_color !important;
+  word-wrap: break-word;
+}
+
+.badge,
+.colon,
+.name {
+  vertical-align: middle;
+}
+
+img {
+  width: 1em;
+  margin-right: 0.3em;
+  vertical-align: middle !important;
+}
+
+/* 닉네임 가독성 해결 */
+
+span.meta[style="color: #00FF00"] {
+  color: #3fd83f !important;
+}
+
+span.meta[style="color: #0000FF"] {
+  color: #4586ff !important;
+}
+
+span.meta[style="color: #5F9EA0"] {
+  color: #56bfa8 !important;
+}
+
+span.meta[style="color: #B22222"] {
+  color: #fb6767 !important;
+}
+
+span.meta[style="color: #2E8B57"] {
+  color: #1ce048 !important;
+}
+
+span.meta[style="color: #191970"] {
+  color: #8383de !important;
+}
+
+span.meta[style="color: #008000"] {
+  color: #49cc49 !important;
+}
+
+span.meta[style="color: #D2691E"] {
+  color: #dc8444 !important;
+}
+
+span.meta[style="color: #FF0000"] {
+  color: #ff4a4a !important;
+}
+
+@keyframes InBox {
+  0% {
+    opacity: 0;
+    margin: 0 -10px -10px 0;
+    box-shadow: 0 0 0 #8eabc5;
+  }
+  to {
+    opacity: 1;
+    margin: 0.5em 0 0;
+    box-shadow: 1px 1px 0 #8eabc5, 2px 2px 0 #8eabc5, 3px 3px 0 #8eabc5,
+      4px 4px 0 #8eabc5, 5px 5px 0 #8eabc5, 6px 6px 0 #8eabc5, 7px 7px 0 #8eabc5,
+      8px 8px 0 #8eabc5, 9px 9px 0 #8eabc5, 10px 10px 0 #8eabc5;
+  }
+}
+
+@keyframes OutBox {
+  0% {
+    opacity: 1;
+    margin: 0.5em 0 0;
+    box-shadow: 1px 1px 0 #8eabc5, 2px 2px 0 #8eabc5, 3px 3px 0 #8eabc5,
+      4px 4px 0 #8eabc5, 5px 5px 0 #8eabc5, 6px 6px 0 #8eabc5, 7px 7px 0 #8eabc5,
+      8px 8px 0 #8eabc5, 9px 9px 0 #8eabc5, 10px 10px 0 #8eabc5;
+  }
+  to {
+    opacity: 0;
+    margin: 0 -10px -10px 0;
+    box-shadow: 0 0 0 #8eabc5;
+  }
 }
