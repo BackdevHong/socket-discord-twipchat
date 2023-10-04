@@ -24,6 +24,23 @@ function App() {
 
     const metaspan = document.createElement("span");
     metaspan.classList.add("meta");
+
+    const randomColor = [
+      "one",
+      "user",
+      "um",
+      "hehe",
+      "realkk",
+      "holy",
+      "heh",
+      "wow",
+      "end",
+    ];
+
+    const randomValue =
+      randomColor[Math.floor(Math.random() * randomColor.length)];
+    metaspan.classList.add(randomValue);
+
     metaspan.append(namespan, colonspan);
     const messagespan = document.createElement("span");
 

@@ -8,131 +8,118 @@ body {
 
 body,
 html {
-  font-family: "NanumSquare";
-  font-size: 40px;
+  font: 30px "NanumSquare", serif;
+  background-color: darkgray;
   height: 100%;
   overflow: hidden;
 }
 
 #log {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
   position: absolute;
-  bottom: 20px;
+  bottom: 0;
   left: 0;
-  padding: 0 1em;
+  padding: 0 0.5em 0.1em;
   width: 100%;
   box-sizing: border-box;
 }
 
-#log div {
-  width: calc(100% - 20px);
-  background: #fff;
-  box-shadow: 1px 1px 0 #8eabc5, 2px 2px 0 #8eabc5, 3px 3px 0 #8eabc5,
-    4px 4px 0 #8eabc5, 5px 5px 0 #8eabc5, 6px 6px 0 #8eabc5, 7px 7px 0 #8eabc5,
-    8px 8px 0 #8eabc5, 9px 9px 0 #8eabc5, 10px 10px 0 #8eabc5;
-  margin: 0.5em 0 0;
-  padding: 0.3em 0.4em;
-  line-height: 1.2em;
-  animation: InBox 0.5s ease, OutBox 1s ease 40s forwards;
-  -webkit-animation: InBox 0.5s ease, OutBox 1s ease 40s forwards;
-}
-
-.badge {
-  padding: 0.05em;
+#log > div {
+  text-shadow: 0 0 0.05em #000, 0 0 0.05em #000, 0 0 0.05em #000,
+    0 0 0.05em #000, 0 0 0.05em #000, 0 0 0.05em #000, 0 0 0.05em #000,
+    0 0 0.05em #000, 0 0 0.05em #000, 0 0 0.05em #000, 0 0 0.05em #000,
+    0 0 0.05em #000, 0 0 0.05em #000, 0 0 0.05em #000, 0 0 0.05em #000,
+    0 0 0.05em #000, 0.05em 0.05em 0.05em #000, 0.05em 0.05em 0.05em #000,
+    0.05em 0.05em 0.05em #000, 0.05em 0.05em 0.05em #000,
+    0.05em 0.05em 0.05em #000, 0.05em 0.05em 0.05em #000,
+    0.05em 0.05em 0.05em #000, 0.05em 0.05em 0.05em #000,
+    0.05em 0.05em 0.05em #000, 0.05em 0.05em 0.05em #000,
+    0.05em 0.05em 0.05em #000, 0.05em 0.05em 0.05em #000,
+    0.05em 0.05em 0.05em #000, 0.05em 0.05em 0.05em #000,
+    0.05em 0.05em 0.05em #000, 0.05em 0.05em 0.05em #000;
+  animation: fadeInUp 0.5s ease, fadeOut 1s ease 40s forwards;
 }
 
 .meta {
-  font-weight: 600;
-  margin-right: 0.3em;
+  margin-right: -0.5em;
+  font-weight: 700;
+}
+
+.message {
+  color: white !important;
+  line-height: 1.5em;
+  margin-top: 0.9em;
+  font-weight: 400;
 }
 
 .deleted {
   visibility: hidden;
 }
 
-.message {
-  color: $text_color !important;
-  word-wrap: break-word;
-}
-
 .badge,
 .colon,
-.name {
+.name,
+.message {
   vertical-align: middle;
 }
 
-img {
-  width: 1em;
+.badge {
   margin-right: 0.3em;
-  vertical-align: middle !important;
+  height: 1em;
+}
+
+.colon {
+  margin-right: 0.7em;
+}
+
+.message > img {
+  height: 1em;
+}
+
+.emote_wrap {
+  position: relative;
+}
+
+.emoticon {
+  height: 20px;
+  vertical-align: middle;
+  margin: -0.1em 0;
+  image-rendering: pixelated;
 }
 
 /* 닉네임 가독성 해결 */
 
-span.meta[style="color: #00FF00"] {
-  color: #3fd83f !important;
+span.meta.one {
+  color: #37b737 !important;
 }
 
-span.meta[style="color: #0000FF"] {
-  color: #4586ff !important;
+span.meta.user {
+  color: #2a74ff !important;
 }
 
-span.meta[style="color: #5F9EA0"] {
+span.meta.um {
   color: #56bfa8 !important;
 }
 
-span.meta[style="color: #B22222"] {
+span.meta.hehe {
   color: #fb6767 !important;
 }
 
-span.meta[style="color: #2E8B57"] {
-  color: #1ce048 !important;
+span.meta.realkk {
+  color: #1cc24d !important;
 }
 
-span.meta[style="color: #191970"] {
+span.meta.holy {
   color: #8383de !important;
 }
 
-span.meta[style="color: #008000"] {
+span.meta.heh {
   color: #49cc49 !important;
 }
 
-span.meta[style="color: #D2691E"] {
+span.meta.wow {
   color: #dc8444 !important;
 }
 
-span.meta[style="color: #FF0000"] {
+span.meta.end {
   color: #ff4a4a !important;
-}
-
-@keyframes InBox {
-  0% {
-    opacity: 0;
-    margin: 0 -10px -10px 0;
-    box-shadow: 0 0 0 #8eabc5;
-  }
-  to {
-    opacity: 1;
-    margin: 0.5em 0 0;
-    box-shadow: 1px 1px 0 #8eabc5, 2px 2px 0 #8eabc5, 3px 3px 0 #8eabc5,
-      4px 4px 0 #8eabc5, 5px 5px 0 #8eabc5, 6px 6px 0 #8eabc5, 7px 7px 0 #8eabc5,
-      8px 8px 0 #8eabc5, 9px 9px 0 #8eabc5, 10px 10px 0 #8eabc5;
-  }
-}
-
-@keyframes OutBox {
-  0% {
-    opacity: 1;
-    margin: 0.5em 0 0;
-    box-shadow: 1px 1px 0 #8eabc5, 2px 2px 0 #8eabc5, 3px 3px 0 #8eabc5,
-      4px 4px 0 #8eabc5, 5px 5px 0 #8eabc5, 6px 6px 0 #8eabc5, 7px 7px 0 #8eabc5,
-      8px 8px 0 #8eabc5, 9px 9px 0 #8eabc5, 10px 10px 0 #8eabc5;
-  }
-  to {
-    opacity: 0;
-    margin: 0 -10px -10px 0;
-    box-shadow: 0 0 0 #8eabc5;
-  }
 }
