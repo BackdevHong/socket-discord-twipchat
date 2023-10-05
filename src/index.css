@@ -9,7 +9,7 @@ body {
 body,
 html {
   font: 30px "NanumSquare", serif;
-  background-color: darkgray;
+  background-color: rgba(0, 0, 0, 0);
   height: 100%;
   overflow: hidden;
 }
